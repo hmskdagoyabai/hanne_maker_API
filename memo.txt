@@ -1,0 +1,39 @@
+        マグノリア
+        アダルトチルドレン
+
+
+          {
+    "kana": "アダルトチルドレン",
+    "original": "Adult Children",
+    "caption": "親のアルコール依存症や虐待、ネグレクトなどにより家族崩壊した家庭で育ち、それによるトラウマを抱えている人。タイプ別に分類され、ヒーロー（英雄）、スケープゴート（いけにえ）、ロスト・ワン（いない子）、マスコット（道化師）、プラケーター（慰め役）、イネイブラー（支え手、援助者）の６つがある。真の自分であるインナーチャイルド（内なる子供）の成長が回復方法とされる。"
+  },
+
+
+    {
+    "kana": "マグノリア",
+    "original": "magnolia",
+    "caption": "木蓮などの植物の総称。モクレン属。"
+  },
+
+
+
+
+  pip install boto3
+
+APIGateway
+https://qiita.com/leomaro7/items/314a80b6d91f9e6b4060
+inset_myoji.py 
+→十数分
+
+
+lambda関数
+
+API GatewayとLambdaのパラメータマッピング
+
+
+{
+"name" : "$input.params('name')",
+"name_id" : "$input.params('name_id')",
+"2nd_id" : "$input.params('2nd_id')"
+}
+ 
