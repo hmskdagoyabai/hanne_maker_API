@@ -1,5 +1,6 @@
 import boto3
 import random
+from boto3.dynamodb.conditions import Key
 
 dynamodb = boto3.resource('dynamodb')
 myoji_table = dynamodb.Table('myoji')
@@ -67,12 +68,20 @@ def lambda_handler(event, context):
     if event['name_id'] != "":
         name = get_myoji_by_id(int(event['name_id']))
     elif event['name'] != "":
-        name = {
-            "name_read": "",
-            "id": 99999,
-            "name": event["name"],
-            "rank": ""
-        }
+
+        response = myoji_table.scan(
+            FilterExpression=Key('name').eq(event['name'])
+        )
+
+        try:
+            name = response["Items"][0]
+        except (KeyError, IndexError):
+            name = {
+                "name_read": "",
+                "id": 99999,
+                "name": event["name"],
+                "rank": ""
+            }
     else:
         name = get_myoji_random()
 
